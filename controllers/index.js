@@ -1,14 +1,9 @@
 const router = require("express").Router();
-const { Post, User, Comment } = require("../models");
 
-router.get("/", async (req, res) => {
-  const blogData = await Post.findAll({
-    include: [{ model: User, attributes: ["username"] }, { model: Comment }],
-  });
+// const apiRoutes = require("./api");
+const homeRoutes = require("./home-routes.js");
 
-  const posts = blogData.map((post) => post.get({ plain: true }));
-
-  res.render("index", { posts });
-});
+router.use("/", homeRoutes);
+// router.use("/api", apiRoutes);
 
 module.exports = router;
