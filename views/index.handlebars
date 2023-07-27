@@ -1,0 +1,9 @@
+{{#each posts}}
+<article>
+  <header style="display: flex; justify-content: space-between;">
+    <h5>{{title}}</h5>
+    <p>Posted by {{user.username}} on {{createdAt}}</p>
+  </header>
+  {{content}}
+</article>
+{{/each}}
