@@ -3,6 +3,7 @@ require("dotenv").config();
 
 let sequelize;
 
+// When deployed in production with heroku, it uses the provided JAWSDB_URL, and when running locally, it uses the local MySQL database credentials.
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
