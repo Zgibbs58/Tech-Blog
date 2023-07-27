@@ -2,7 +2,7 @@
 <article>
   <header style="display: flex; justify-content: space-between;">
     <h5>{{title}}</h5>
-    <p>Posted by {{user.username}} on {{createdAt}}</p>
+    <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
   </header>
   {{content}}
 </article>
