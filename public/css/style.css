@@ -1,0 +1,33 @@
+:root {
+  --primary: #6cca8f !important;
+  --secondary: #86938f;
+  --tertiary: #5e877f;
+  --quatrinary: #6c6b67;
+  --light: #e3e4e3;
+  --dark: #234133;
+  --error: rgb(228, 46, 1);
+  --border-radius: 0.3rem;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: var(--primary);
+}
+.card-header {
+  background-color: var(--secondary);
+  color: var(--light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.card-header h5,
+.card-header p {
+  color: var(--light);
+  margin: 0;
+}
