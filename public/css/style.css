@@ -1,12 +1,7 @@
 :root {
   --primary: #6cca8f !important;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
-  --quatrinary: #6c6b67;
-  --light: #e3e4e3;
-  --dark: #234133;
-  --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
+  --secondary: #86938f !important;
+  --light: #e3e4e3 !important;
 }
 
 body {
@@ -17,6 +12,39 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--primary);
+}
+.nav-header {
+  background-color: var(--secondary);
+  color: var(--light);
+  padding: 0.5rem 1rem 0.5rem 3rem;
+}
+.nav-header h1 {
+  display: inline-block;
+  margin: 0 0 1rem 1rem;
+  background-color: var(--light);
+  padding: 0.1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 10px #6b6b6b;
+}
+nav {
+  background-color: var(--secondary);
+  color: var(--light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem;
+}
+nav li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+nav a {
+  color: var(--light);
+  font-size: x-large;
+}
+nav a:hover {
+  color: var(--primary);
+  text-decoration: none;
 }
 .card-header {
   background-color: var(--secondary);
