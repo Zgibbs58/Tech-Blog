@@ -1,7 +1,10 @@
 :root {
-  --primary: #6cca8f !important;
+  --primary: #009165 !important;
   --secondary: #86938f !important;
   --light: #e3e4e3 !important;
+  --dark: #6b6b6b !important;
+  --background: #6cca8f !important;
+  --primary-hover: #6cca8f !important;
 }
 
 body {
@@ -12,7 +15,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--primary);
+  background-color: var(--background);
 }
 .content {
   padding: 0.5rem 3rem;
@@ -62,4 +65,18 @@ nav a:hover {
 .card-header p {
   color: var(--light);
   margin: 0;
+}
+
+.login-card {
+  margin: 0 0 20px 0;
+  padding: 5px;
+  border: 3px solid var(--light);
+  border-radius: var(--light);
+  border-style: double;
+  border-width: thick;
+  background-color: var(--light);
+  color: var(--light);
+}
+.login-card a {
+  color: blue;
 }
