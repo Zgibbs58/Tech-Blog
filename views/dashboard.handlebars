@@ -1,1 +1,9 @@
-hello
+{{!-- {{#if loggedIn}} --}}
+    {{#each posts}}
+    <button class="card-header">
+        <h5>{{title}}</h5>
+        <p>{{format_date createdAt}}</p>
+    </button>
+    {{/each}}
+    <button class="dashboard-btn">+ New Post</button>
+{{!-- {{/if}} --}}

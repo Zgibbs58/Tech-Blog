@@ -4,7 +4,7 @@
   --light: #e3e4e3 !important;
   --dark: #6b6b6b !important;
   --background: #6cca8f !important;
-  --primary-hover: #6cca8f !important;
+  --primary-hover: #00b47e !important;
 }
 
 body {
@@ -79,4 +79,7 @@ nav a:hover {
 }
 .login-card a {
   color: blue;
+}
+
+.dashboard-btn {
 }
