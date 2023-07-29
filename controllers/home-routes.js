@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -9,14 +10,15 @@ router.get("/", async (req, res) => {
 
     const posts = blogData.map((post) => post.get({ plain: true }));
 
-    res.render("index", { posts });
+    res.render("index", { posts, loggedIn: req.session.loggedIn });
   } catch (error) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get("/dashboard", async (req, res) => {
+// withAuth is using helper auth.js to check if user is logged in
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const blogData = await Post.findAll({
       include: [{ model: User, attributes: ["username"] }, { model: Comment }],
@@ -26,6 +28,19 @@ router.get("/dashboard", async (req, res) => {
 
     res.render("dashboard", { isDashboardPage: true, posts });
   } catch (error) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/post/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+
+    const post = postData.get({ plain: true });
+
+    res.render("post", { post, loggedIn: req.session.loggedIn });
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
@@ -49,6 +64,7 @@ router.get("/signUp", (req, res) => {
   res.render("signUp");
 });
 
+// path to see users being added in insomnia
 router.get("/user", async (req, res) => {
   //   if (req.session.loggedIn) {
   //     res.redirect("/");

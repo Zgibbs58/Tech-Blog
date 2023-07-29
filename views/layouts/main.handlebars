@@ -14,7 +14,12 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/dashboard">Dashboard</a></li>
+            {{#if loggedIn}}
+            <li><button id="logout" class="logout-btn">Logout</button></li>
+            {{else}}
             <li><a href="/login">Login</a></li>
+            {{/if}}
+
         </ul>
     </nav>
     {{#if isDashboardPage}}
@@ -29,3 +34,5 @@
     </div>
 </body>
 </html>
+
+<script src="./js/logout.js"></script>

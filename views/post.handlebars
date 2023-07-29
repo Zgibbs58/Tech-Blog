@@ -1,0 +1,16 @@
+
+  <article class="post-card">
+    <header class="card-header">
+      <h5>{{post.title}}</h5>
+      <p>Posted by {{post.user.username}} on {{format_date post.createdAt}}</p>
+    </header>
+    {{post.content}}
+  </article>
+  <article class="post-card">
+    <header class="card-header">
+    </header>
+    <form action="submit">
+        <h6>Comment</h6>
+        <textarea name="comment" id="comment" cols="30" rows="3"></textarea>
+    </form>
+  </article>

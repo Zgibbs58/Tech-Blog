@@ -1,10 +1,13 @@
 
 {{#each posts}}
-<article class="post-card">
-  <header class="card-header">
-    <h5>{{title}}</h5>
-    <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
-  </header>
-  {{content}}
-</article>
+<a href="/post/{{id}}" class="post-card-link">
+  <article class="post-card">
+    <header class="card-header">
+      <h5>{{title}}</h5>
+      <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
+    </header>
+    {{content}}
+  </article>
+</a>
+
 {{/each}}

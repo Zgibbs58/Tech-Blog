@@ -53,6 +53,10 @@ nav a:hover {
   color: var(--primary);
   text-decoration: none;
 }
+.post-card-link {
+  text-decoration: none;
+  color: var(--dark);
+}
 .card-header {
   background-color: var(--secondary);
   color: var(--light);
@@ -81,5 +85,7 @@ nav a:hover {
   color: blue;
 }
 
-.dashboard-btn {
+.logout-btn {
+  background-color: transparent;
+  border: none;
 }
