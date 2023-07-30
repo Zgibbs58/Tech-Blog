@@ -53,6 +53,9 @@ nav a:hover {
   color: var(--primary);
   text-decoration: none;
 }
+.post-card {
+  margin-bottom: 0.25rem;
+}
 .post-card-link {
   text-decoration: none;
   color: var(--dark);
@@ -88,4 +91,51 @@ nav a:hover {
 .logout-btn {
   background-color: transparent;
   border: none;
+}
+
+.comment-card {
+  margin: 0.25rem;
+  padding: 10px;
+  background-color: var(--light);
+  color: var(--light);
+}
+.comment-card p,
+.comment-card h6 {
+  margin: 0;
+  padding: 0;
+}
+.dashboard-post {
+  margin: 1rem 0;
+  background-color: var(--secondary);
+  color: var(--light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.dashboard-post h5,
+.dashboard-post p {
+  color: var(--light);
+  margin: 0;
+}
+a h5,
+a p {
+  color: var(--light);
+  text-decoration: none;
+}
+
+.dashboard-btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+}
+.dashboard-btn:hover {
+  cursor: pointer;
+  background-color: var(--primary-hover);
+  color: var(--light);
+  text-decoration: none;
 }

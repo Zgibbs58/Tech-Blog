@@ -1,0 +1,25 @@
+
+  {{!-- <article class="post-card">
+    <header class="card-header">
+      <h5>{{post.title}}</h5>
+      <p>Posted by {{post.user.username}} on {{format_date post.createdAt}}</p>
+    </header>
+    {{post.content}}
+  </article> --}}
+
+  <article class="post-form">
+    <header class="card-header">
+    </header>
+    <form id="post-form" data-user-id="{{post.user_id}}" data-post-id="{{post.id}}" action="submit" class="comment-form">
+        <h6>Create New Post</h6>
+        <label for="post-tilte">Title</label>
+        <input type="text" name="post-title" id="post-title" />
+        <label for="post-content">Content</label>
+        <textarea name="post-content" id="post-content" cols="30" rows="2"></textarea>
+        <div class="form-group">
+        <button class="btn btn-primary" type="submit">Post</button>
+      </div>
+    </form>
+  </article>
+
+  {{!-- <script src="/js/post.js"></script> --}}

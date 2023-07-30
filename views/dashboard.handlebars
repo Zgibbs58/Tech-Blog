@@ -1,9 +1,10 @@
-{{!-- {{#if loggedIn}} --}}
+
     {{#each posts}}
-    <button class="card-header">
+    <a href="/userPosts/{{id}}" class="dashboard-post">
         <h5>{{title}}</h5>
         <p>{{format_date createdAt}}</p>
-    </button>
+    </a>
     {{/each}}
-    <button class="dashboard-btn">+ New Post</button>
-{{!-- {{/if}} --}}
+    <a class="dashboard-btn" href="/api/userPosts">+ New Post</a>
+
+

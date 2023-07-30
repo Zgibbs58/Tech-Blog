@@ -10,18 +10,16 @@
   {{#if comments}}
   {{#each comments}}
     <article class="comment-card">
-        <header class="card-header">
-        <h5>Comment by {{user.username}} on {{format_date createdAt}}</h5>
-        </header>
-        {{content}}
+        <p>{{content}}</p>
+        <h6>Comment by {{user.username}} on {{format_date createdAt}}</h6>
     </article>
     {{/each}}
     {{/if}}
 
-  <article class="comment-card">
+  <article class="comment-card-form">
     <header class="card-header">
     </header>
-    <form id="comment-form" data-user-id="{{post.user_id}}" data-post-id="{{post.id}}" action="submit" class="comment-form">
+    <form id="comment-form" data-post-id="{{post.id}}" action="submit" class="comment-form">
         <h6>Comment</h6>
         <textarea name="comment" id="comment" cols="30" rows="3"></textarea>
         <div class="form-group">

@@ -26,7 +26,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     const posts = blogData.map((post) => post.get({ plain: true }));
 
-    res.render("dashboard", { isDashboardPage: true, posts });
+    res.render("dashboard", { isDashboardPage: true, posts, loggedIn: req.session.loggedIn });
   } catch (error) {
     console.log(err);
     res.status(500).json(err);
