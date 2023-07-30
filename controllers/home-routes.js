@@ -37,9 +37,13 @@ router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
 
+    const user = await User.findByPk(postData.user_id);
+
     const post = postData.get({ plain: true });
 
-    res.render("post", { post, loggedIn: req.session.loggedIn });
+    const username = user.get({ plain: true }).username;
+
+    res.render("post", { post, username, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
