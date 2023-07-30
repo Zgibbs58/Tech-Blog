@@ -16,24 +16,28 @@ const commentFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    if (response.ok) {
-      const newComment = await response.json(); // Parse the JSON response
+    location.reload();
 
-      // Create a new HTML element for the comment and insert it below the post
-      const commentContainer = document.createElement("div");
-      commentContainer.innerHTML = `
-          <h6>New Comment:</h6>
-          <p>${newComment.content}</p>
-        `;
+    //
 
-      // Append the new comment container to the document
-      document.querySelector(".post-card").appendChild(commentContainer);
+    // if (response.ok) {
+    //   const newComment = await response.json(); // Parse the JSON response
 
-      // Clear the comment input field
-      document.querySelector("#comment").value = "";
-    } else {
-      alert("Failed to add comment.");
-    }
+    //   // Create a new HTML element for the comment and insert it below the post
+    //   const commentContainer = document.createElement("div");
+    //   commentContainer.innerHTML = `
+    //       <h6>New Comment:</h6>
+    //       <p>${newComment.content}</p>
+    //     `;
+
+    //   // Append the new comment container to the document
+    //   document.querySelector(".post-card").appendChild(commentContainer);
+
+    //   // Clear the comment input field
+    //   document.querySelector("#comment").value = "";
+    // } else {
+    //   alert("Failed to add comment.");
+    // }
   }
 };
 

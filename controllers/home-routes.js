@@ -35,15 +35,21 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 router.get("/post/:id", async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: ["username"] }] });
 
-    const user = await User.findByPk(postData.user_id);
+    // Finds all comments for a single post id
+    const commentData = await Comment.findAll({
+      where: {
+        post_id: req.params.id,
+      },
+      include: [{ model: User, attributes: ["username"] }],
+    });
 
     const post = postData.get({ plain: true });
 
-    const username = user.get({ plain: true }).username;
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
 
-    res.render("post", { post, username, loggedIn: req.session.loggedIn });
+    res.render("post", { post, comments, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -91,6 +97,14 @@ router.get("/post", async (req, res) => {
   const posts = blogData.map((post) => post.get({ plain: true }));
 
   res.json(posts);
+});
+
+router.get("/example", (req, res) => {
+  // Assuming the user ID is stored in req.session.user_id
+  const userId = req.session.user_id;
+  console.log(req.session);
+
+  // ... rest of your code ...
 });
 
 module.exports = router;
