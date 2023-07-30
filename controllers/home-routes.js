@@ -77,4 +77,16 @@ router.get("/user", async (req, res) => {
   res.json(posts);
 });
 
+router.get("/post", async (req, res) => {
+  //   if (req.session.loggedIn) {
+  //     res.redirect("/");
+  //     return;
+  //   }
+  const blogData = await Comment.findAll({});
+
+  const posts = blogData.map((post) => post.get({ plain: true }));
+
+  res.json(posts);
+});
+
 module.exports = router;
