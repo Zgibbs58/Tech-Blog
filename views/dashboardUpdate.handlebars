@@ -1,0 +1,16 @@
+<article class="post-form">
+    <header class="card-header">
+    </header>
+    <form id="update-form" data-user-id="{{post.user_id}}" data-post-id="{{post.id}}" action="submit" class="comment-form">
+        <h6>Update Post</h6>
+        <label for="update-title">Title</label>
+        <input type="text" name="update-title" id="update-title" value="{{post.title}}" />
+        <label for="post-content">Content</label>
+        <textarea name="update-content" id="update-content" cols="30" rows="2">{{post.content}}</textarea>
+        <div class="form-group">
+        <button class="btn btn-primary" type="submit">Update</button>
+      </div>
+    </form>
+  </article>
+
+  <script src="/js/update.js"></script>

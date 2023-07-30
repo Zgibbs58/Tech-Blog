@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, Comment } = require("../../models");
+const { Post, Comment, User } = require("../../models");
 
 // post a new blog post from dashboard
 router.post("/", async (req, res) => {
@@ -9,6 +9,38 @@ router.post("/", async (req, res) => {
       content: req.body.content,
       user_id: req.session.user_id,
     });
+    res.render("dashboard", { loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Get a blog post from dashboard
+router.get("/:id", async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: ["username"] }] });
+    const post = postData.get({ plain: true });
+    res.render("dashboardUpdate", { post, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
+// Update a blog post from dashboard
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedPost = await Post.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
     res.render("dashboard", { loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(400).json(err);
