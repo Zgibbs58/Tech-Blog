@@ -53,7 +53,7 @@ router.get("/", (req, res) => {
   //   return;
   // }
 
-  res.render("dashboardPost", { loggedIn: req.session.loggedIn });
+  res.render("dashboardPost", { loggedIn: req.session.loggedIn, isDashboardPage: true });
 });
 
 module.exports = router;
