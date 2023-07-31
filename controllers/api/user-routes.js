@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      // saved the user id to the session so I could acces it when a user comments or posts
+      // saved the user id to the session so I could access it when a user comments or posts
       req.session.user_id = dbUserData.id;
 
       res.status(200).json(dbUserData);

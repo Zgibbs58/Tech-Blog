@@ -91,6 +91,13 @@ nav a:hover {
 .logout-btn {
   background-color: transparent;
   border: none;
+  color: var(--light);
+  font-size: x-large;
+}
+
+.logout-btn:hover {
+  color: var(--primary);
+  text-decoration: none;
 }
 
 .comment-card {
