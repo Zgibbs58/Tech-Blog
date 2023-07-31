@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: "ea4411c5-802b-4f61-9a7d-7b9226414593",
-  cookie: { maxAge: 24 * 60 * 60 * 1000 },
+  cookie: { maxAge: 2 * 60 * 60 * 1000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

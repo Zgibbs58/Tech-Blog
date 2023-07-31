@@ -139,3 +139,20 @@ a p {
   color: var(--light);
   text-decoration: none;
 }
+.delete-btn {
+  background-color: rgb(211, 0, 0) !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+}
+.delete-btn:hover {
+  cursor: pointer;
+  background-color: #ff0000 !important;
+  color: var(--light);
+  text-decoration: none;
+}
