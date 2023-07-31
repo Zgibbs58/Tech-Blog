@@ -41,7 +41,11 @@ router.put("/:id", async (req, res) => {
         },
       }
     );
-    res.render("dashboard", { loggedIn: req.session.loggedIn });
+
+    console.log("updatedPost", updatedPost);
+    res.json(updatedPost);
+
+    // res.render("dashboard", { loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(400).json(err);
   }

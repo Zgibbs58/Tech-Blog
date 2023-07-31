@@ -6,8 +6,8 @@ const updatePost = async (event) => {
   console.log(title);
   const content = document.querySelector("#update-content").value.trim();
   console.log(content);
-  //   const id = document.querySelector("#post-id").value.trim();
-  //   console.log(id);
+  const id = document.querySelector("#update-form").getAttribute("data-post-id");
+  console.log(id);
 
   if (title && content) {
     const response = await fetch(`/api/post/${id}`, {
@@ -26,3 +26,7 @@ const updatePost = async (event) => {
     }
   }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#update-form").addEventListener("submit", updatePost);
+});
