@@ -28,5 +28,5 @@ const updatePost = async (event) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("#update-form").addEventListener("submit", updatePost);
+  document.querySelector("#update-form")?.addEventListener("submit", updatePost);
 });
