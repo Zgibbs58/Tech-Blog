@@ -119,6 +119,11 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  text-decoration: none;
+}
+.dashboard-post:hover {
+  text-decoration: none;
+  background-color: var(--dark);
 }
 .dashboard-post h5,
 .dashboard-post p {

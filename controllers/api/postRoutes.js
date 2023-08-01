@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, { include: [{ model: User, attributes: ["username"] }] });
     const post = postData.get({ plain: true });
-    res.render("dashboardUpdate", { post, loggedIn: req.session.loggedIn });
+    res.render("dashboardUpdate", { isDashboardPage: true, post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
