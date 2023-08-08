@@ -31,6 +31,8 @@ SECRET=your_session_secret
 ## Usage
 Visit the deployed application to use Tech Blog. The homepage displays existing blog posts (if any), navigation links for the homepage and dashboard, and the option to log in or sign up. Once logged in, you can create new blog posts, view existing posts, add comments, update or delete your own posts, and log out.
 
+[Deployed Link](https://tech-blog-2023-07-31-cd0117d1e184.herokuapp.com/dashboard)
+
 ## Features
 - User authentication (sign up, log in, log out) with session management.
 - Create, read, update, and delete blog posts.
