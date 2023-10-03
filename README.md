@@ -5,7 +5,7 @@
 ![Walkthrough GIF](assets/tech_walkthrough.gif)
 
 ## Description
-Tech Blog is a CMS-style blog site where developers can publish their blog posts and comment on other posts. The application follows the MVC paradigm in its file structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+Tech Blog is a blog site where developers can publish their blog posts and comment on other posts. The application follows the MVC paradigm in its file structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Table of Contents
 - [Installation](#installation)
